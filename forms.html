@@ -9,15 +9,109 @@
 
 <body>
     <h1>Forms Demo</h1>
+    <button>OUTSIDE FORM</button>
+
     <form action="tacos">
-        <input type="text" placeholder="Username">
-        <input type="password" placeholder="Password">
-        <input type="color">
-        <input type="month">
-        <input type="number" placeholder="Enter a number">
-        <input type="time">
-        <input type="week">
+        <button type="button">PLEASE DO NOT SUBMIT THE FORM</button>
+        <p>
+            <label for="username">Enter username:</label>
+            <input id="username" type="text" placeholder="Username" name="username">
+        </p>
+        <p>
+            <label for="password">Enter password:</label>
+            <input type="password" placeholder="Password" name="password">
+        </p>
+        <button>IN THE MIDDLE</button>
+        <p>
+            <label for="color">Enter color:</label>
+            <input id="color" type="color" name="color">
+        </p>
+        <p>
+            <label>
+                Enter a number:
+                <input id="number" type="number" placeholder="Enter a number" name="number" min="0" max="1000" step="2">
+            </label>
+        </p>
+
+        <button>Submit</button>
+        <button type="button">PLEASE DO NOT SUBMIT THE FORM</button>
+        <input type="submit" value="Click Me">
     </form>
+    <hr>
+    <!--Outside of a form, no default behavior-->
+    <button>Not inside Form</button>
+    <h2>Hijacking Searchers</h2>
+    <h3>Reddit</h3>
+    <form action="https://www.reddit.com/search">
+        <input type="text" name="q">
+        <!--need to maatch the exact name in the url-->
+        <button>Search Reddit</button>
+    </form>
+    <h3>Google</h3>
+    <form action="https://www.google.com/search">
+        <input type="text" name="q">
+        <button>Search Google</button>
+    </form>
+    <h3>Youtube</h3>
+    <form action="https://www.youtube.com.br/results">
+        <input type="text" name="search_query">
+        <button>Search Youtube</button>
+    </form>
+    <!--check boxes-->
+    <h2>More Inputs!</h2>
+    <form action="birds">
+        <input type="checkbox" name="Agree_tos" id="agree">
+        <label for="agree">I agree to everything</label>
+        <button>Submit</button>
+        <!--radio boxes-->
+        <p>
+            <label for="xs">XS</label>
+            <input type="radio" name="Size" id="XS" value="XS">
+            <label for="g">G</label>
+            <input type="radio" name="Size" id="G" value="G">
+            <label for="m">M</label>
+            <input type="radio" name="Size" id="M" value="M">
+        </p>
+        <p>
+            <label for="">Please select an Entree</label>
+            <select name="meal" id="meal">
+                <option value="fish"></option>
+                <option value="veg"></option>
+                <option value="steak"></option>
+            </select>
+        </p>
+        <p>
+            <label for="cheese">Amount of Cheese</label>
+            <input typ="range" id="cheese" min="1" max="10" step="2" name="cheese_level" value="75">
+        </p>
+        <p>
+            <label for="requests">Any Special Requests?</label>
+            <br>
+            <textarea name="requests" id="" cols="30" rows="10" placeholder="Type your requests here"></textarea>
+        </p>
+
+
+    </form>
+
+    <h2>Validations Demo</h2>
+    <form action="/dummy">
+        <label for="first">Enter First Name</label>
+        <input type="text" name="first" id="first">
+        <p>
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username" minlength="5" maxlength="25">
+        </p>
+        <button>Submit</button>
+
+        <p>
+            <label for="email">E-mail:</label>
+            <input type="email" name="e-mail" id="email" required>
+            <label for="url">Enter URL:</label>
+            <input type="url" name="url" id="url" required>
+
+        </p>
+    </form>
+
 
 </body>
 
